@@ -18,6 +18,8 @@ m3 = Rank3Matrix(rand(4), rand(4), rand(4))
 @test abs(det(m3)) < 1e-10
 @test det(m4) != 0
 
+@test_throws ErrorException m1[3] = 1.1
+
 @test rank(m1) == rank(Matrix(m1)) == 1
 @test rank(m2) == rank(Matrix(m2)) == 2
 @test rank(m3) == rank(Matrix(m3)) == 3
@@ -31,3 +33,12 @@ m1x3 = m1*m3
 
 m2xr = m2*rand(4,4)
 @test rank(m2xr) == min(rank(m2), 4)
+
+rc = rand(4)
+v2 = m2*rc
+x2 = Matrix(m2)*rc
+@test prod(v2 .≈ x2)
+
+v2 = rc'*m2
+x2 = rc'*Matrix(m2)
+@test prod(v2 .≈ x2)

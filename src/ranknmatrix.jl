@@ -28,6 +28,12 @@ size(m::FixedRankMatrix) = (length(m.hs[1]), length(m.hs[1]))
 end
 setindex!(m::FixedRankMatrix, v, i::Int, j::Int) = error("cannot set entries, not implimented")
 
-import Base:*,+
+import Base: *, +
 *(m1::FixedRankMatrix, m2::FixedRankMatrix) = sum(h1 * h2' .* (h1'*h2)  for h1 in m1.hs, h2 in m2.hs)
 +(m1::FixedRankMatrix, m2::FixedRankMatrix) = FixedRankMatrix(SVector(m1.hs...,m2.hs...))
+
+*(m::FixedRankMatrix, c::AbstractVector) = sum(h * (h'*c)  for h in m.hs)
+# *(c::AbstractVector, m::FixedRankMatrix) = sum((c * h) * h'  for h in m.hs)
+
+*(m::FixedRankMatrix, c::AbstractMatrix) = sum(h * (h'*c)  for h in m.hs)
+# *(c::AbstractMatrix, m::FixedRankMatrix) = sum((c * h) * h'  for h in m.hs)
