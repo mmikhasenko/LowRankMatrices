@@ -1,0 +1,14 @@
+name = "LowRankMatrices"
+uuid = "620e30da-9694-4ea0-b21c-e7c1506b2399"
+authors = ["Misha Mikhasenko <mikhail.mikhasenko@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
