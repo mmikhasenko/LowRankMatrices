@@ -1,6 +1,6 @@
 # Fixed Rank Matrices
 
-[![Build Status](https://travis-ci.com/mmikhasenko/LowRankMatrices.jl.svg?branch=master)](https://travis-ci.com/mmikhasenko/LowRankMatrices.jl)
+[![Build Status](https://travis-ci.com/mmikhasenko/LowRankMatrices.jl.svg?branch=master)](https://travis-ci.com/mmikhasenko/LowRankMatrices)
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/mmikhasenko/LowRankMatrices.jl?svg=true)](https://ci.appveyor.com/project/mmikhasenko/LowRankMatrices-jl)
 [![Codecov](https://codecov.io/gh/mmikhasenko/LowRankMatrices.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/mmikhasenko/LowRankMatrices.jl)
 
